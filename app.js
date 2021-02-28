@@ -3,6 +3,7 @@ const keys = require('./keys');
 const fs = require("fs");
 const dropboxV2Api = require("dropbox-v2-api");
 const multer = require('multer');
+const cors = require("cors");
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -29,6 +30,11 @@ var upload = multer({
 
 
 const app = express()
+app.use(
+    cors({
+        origin: "http://localhost:3000"
+    })
+);
 app.get("/", (req, res) => {
     res.send("potato")
 })
@@ -71,6 +77,7 @@ app.post('/upload', upload.any(), (req, res) => {
 
 
 })
+
 
 app.listen(5000, () => {
     console.log(`Server successfully created on Port: 5000`);

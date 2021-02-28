@@ -7,17 +7,16 @@ const Upload = (props) => {
    const [photo, setPhoto] = useState()
     const [errors, setErrors] = useState("")
     const [success, setSuccess] = useState(false)
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault()
         setErrors("")
         if (photo && photo.length > 0){
-        let show = localStorage.getItem("riorecords_event")
         let formData = new FormData()
         formData.append('photo', photo[0].file)
         formData.append('folder', new Date())
         formData.append('user', v4())
         setErrors("Sending File")
-        axios.post(`/api/upload`, formData, {
+        axios.post(`http://localhost:5000/upload`, formData, {
         }).then(res => {
             console.log(res.data)
             if (res.data.errors){
@@ -25,7 +24,7 @@ const Upload = (props) => {
             }else if(res.data.success){
                 setSuccess(true)
             }
-        })}else{
+        }).catch(e=> console.log(e))}else{
             setErrors("Please select an image file first.")
         }
     }
@@ -33,15 +32,15 @@ const Upload = (props) => {
     const renderErrors = () => {
         if (errors !== ""){
             return (
-                <div class="upload__errors">{errors}</div>
+                <div>{errors}</div>
             )
         }else{
             return null
         }
     }
 
-    const uploadStyle = { height: "180px"}
-    uploadStyle.display = (props.uploadActive) ? 'block' : 'none';
+
+    
 
     return (
         <>
