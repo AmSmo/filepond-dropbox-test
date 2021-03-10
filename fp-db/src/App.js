@@ -1,11 +1,11 @@
-import Upload from './upload.jsx'
+import Upload from './Upload.jsx'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <Upload />
-    </div>
+    </main>
   );
 }
 

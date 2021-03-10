@@ -1,0 +1,53 @@
+Arguments: 
+  /Users/adamsmolenski/.nvm/versions/node/v14.6.0/bin/node /Users/adamsmolenski/.yarn/bin/yarn.js test
+
+PATH: 
+  /Users/adamsmolenski/.rvm/gems/ruby-2.6.1/bin:/Users/adamsmolenski/.rvm/gems/ruby-2.6.1@global/bin:/Users/adamsmolenski/.rvm/rubies/ruby-2.6.1/bin:/Users/adamsmolenski/.yarn/bin:/Users/adamsmolenski/.config/yarn/global/node_modules/.bin:/usr/local/opt/imagemagick@6/bin:/Users/adamsmolenski/.rbenv/bin:/Users/adamsmolenski/google-cloud-sdk/bin:/Users/adamsmolenski/.nvm/versions/node/v14.6.0/bin:/Users/adamsmolenski/.rbenv/bin:/Users/adamsmolenski/google-cloud-sdk/bin:/Users/adamsmolenski/.nvm/versions/node/v14.6.0/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Users/adamsmolenski/.rvm/gems/ruby-2.6.1/bin:/Users/adamsmolenski/.rvm/gems/ruby-2.6.1@global/bin:/Users/adamsmolenski/.rvm/rubies/ruby-2.6.1/bin:/Users/adamsmolenski/.yarn/bin:/Users/adamsmolenski/.config/yarn/global/node_modules/.bin:/usr/local/opt/imagemagick@6/bin:/Users/adamsmolenski/.rbenv/bin:/Users/adamsmolenski/google-cloud-sdk/bin:/Users/adamsmolenski/.nvm/versions/node/v14.6.0/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local:/usr/local/sbin:/Users/adamsmolenski/.rvm/bin:/Users/adamsmolenski/.rvm/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  14.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/adamsmolenski/Desktop/JobSearch/blogs/filepond-dropbox/package.json: Unexpected string in JSON at position 187
+      at JSON.parse (<anonymous>)
+      at /Users/adamsmolenski/.yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/adamsmolenski/.yarn/lib/cli.js:310:30)
+      at /Users/adamsmolenski/.yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "filepondtests",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+      "server": "nodemon app.js",
+      "frontend": "yarn start --prefix fp-db"
+      "test": "nodemon app.js && npm run frontend"
+    },
+    "author": "AmSmo",
+    "dependencies": {
+      "body-parser": "^1.18.3",
+      "cors": "^2.8.5",
+      "dropbox-v2-api": "^2.4.38",
+      "express": "^4.17.1",
+      "multer": "^1.4.2",
+      "react-filepond": "^7.1.1"
+    },
+    "devDependencies": {
+      "nodemon": "^1.18.10"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
